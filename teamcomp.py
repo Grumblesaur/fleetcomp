@@ -151,13 +151,16 @@ def comps(team_data: Path = Path("clan-battles-top5.json"), restriction_data: Pa
     compgen = division.generate_comps(restrictions)
     while True:
         comp_batch = take(to_take, compgen)
+        if not comp_batch:
+            print(f'All {n} compositions are expended.')
+            break
         for comp in comp_batch:
             print(f"=== Composition #{n} ===")
             for ship in sorted(comp, key=lambda s: str(s.type)):
                 print(f'{ship.player}: [{ship.type}] {ship.name}')
             n += 1
             print()
-        instruction = input(f"Enter number of builds to generate, blank for {to_take}, or Q to quit: ")
+        instruction = input(f"Enter number of builds to generate, blank for 1, or Q to quit: ")
         if instruction.casefold().startswith('q'):
             break
         try:
