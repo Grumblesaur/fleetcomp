@@ -1,0 +1,52 @@
+{
+  "CankedTank": {
+    "BB": ["Ohio", "Wisconsin", "Preussen", "Grosser Kurfürst", "Mecklenburg", "Thunderer", "République", "Bourgogne"],
+    "CA": ["Worcester", "Puerto Rico", "Stalingrad", "Napoli", "Gouden Leeuw", "Brisbane"],
+    "DD": ["Hayate", "Khabarovsk", "Z-52", "Ragnar", "Tromp"]
+  },
+  "HowthCastleAndEnvirons": {
+    "BB": ["Wisconsin", "Montana", "Irresistible"],
+    "CA": ["Des Moines", "Kushiro", "Napoli", "Jinan", "Svea", "Gouden Leeuw", "Utrecht", "Cerberus", "Zao"],
+    "DD": ["Gearing", "Laffey", "Cassard", "Kléber", "Marceau", "Tromp", "Vampire II"]
+  },
+  "Tendaarnight": {
+    "BB": ["Vermont", "Schlieffen"],
+    "CA": ["Salem", "Moskva", "Napoli"],
+    "DD": ["Laffey"]
+  },
+  "Contaan": {
+    "BB": [],
+    "CA": ["Salem", "Worcester"],
+    "DD": ["Daring", "Laffey"]
+  },
+  "con411": {
+    "BB": [],
+    "CA": ["Yoshino", "Zao"],
+    "DD": []
+  },
+  "Windexor": {
+    "BB": ["Schlieffen", "Cristoforo Colombo", "Ohio", "Preussen", "Grosser Kurfürst", "Conqueror"],
+    "CA": ["Worcester", "Salem", "Colbert", "Jinan", "Napoli", "Des Moines", "Petropavlovsk"],
+    "DD": ["Halland", "Yueyang", "Gearing", "Forrest Sherman", "Shimakaze", "Z-42"]
+  },
+  "Crisp_Kringle": {
+    "BB": ["Cristoforo Colombo", "Grosser Kurfürst", "Yamato", "Conqueror", "Montana", "Vermont", "Bourgogne"],
+    "CA": ["Napoli", "Gouden Leeuw", "Petropavlovsk", "Moskva", "Venezia"],
+    "DD": ["Marceau", "Harugumo"]
+  },
+  "clubinator89": {
+    "BB": ["Yamato", "Grosser Kurfürst", "Montana", "Schlieffen", "République", "Conqueror", "Preussen", "Vermont", "Mecklenburg", "Bourgogne", "Kremlin"],
+    "CA": ["Worcester", "Hindenburg", "Minotaur", "Petropavlovsk", "Napoli", "Henri IV", "Brisbane"],
+    "DD": ["Forrest Sherman", "Gearing", "Laffey"]
+  },
+  "lekotbegemot": {
+    "BB": ["Schlieffen", "Libertad"],
+    "CA": ["Castilla", "San Martín"],
+    "DD": []
+  },
+  "Duker_D9": {
+    "BB": [],
+    "CA": [],
+    "DD": ["Shimakaze", "Gearing"]
+  }
+}
