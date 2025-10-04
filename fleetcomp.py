@@ -3,11 +3,10 @@ import sys
 import argparse
 from enum import StrEnum
 from pathlib import Path
-from typing import Self, Iterator
+from typing import Self, Iterator, Callable
 from collections import Counter
 from itertools import combinations
 from more_itertools import take, ilen
-from typing import Callable
 
 
 class ShipType(StrEnum):
@@ -68,7 +67,7 @@ class RestrictionSet:
 
     @classmethod
     def load(cls, json_path: Path, team_size: int = 7) -> Self:
-        with open(json_path, 'r') as f:
+        with open(json_path, 'r', encoding='utf-8') as f:
             return cls(json.load(f), team_size=team_size)
 
     def is_valid(self, composition: set[Ship]) -> bool:
@@ -83,8 +82,8 @@ class RestrictionSet:
                     rcounts[rname] += ship.name in rinfo["ships"]
                 else:
                     rcounts[rname] += ship.type in rinfo["types"]
-        for rule, count in rcounts.items():
-            if count > self.restrictions[rule]["allowed"]:
+        for rule, c in rcounts.items():
+            if c > self.restrictions[rule]["allowed"]:
                 return False
         return True
 
@@ -92,7 +91,7 @@ class RestrictionSet:
         return len(composition) == self.size_limit
 
     def team_compositions(self, selected: set[Ship], group: list[Player]) -> Iterator[set[Ship]]:
-        if self.is_full_team(selected) and self.is_valid(selected):
+        if self.is_valid(selected) and self.is_full_team(selected):
             yield selected
             return
         if not group:
@@ -108,7 +107,7 @@ class Team:
 
     @classmethod
     def load(cls, team_json: Path) -> Self:
-        with open(team_json, 'r') as f:
+        with open(team_json, 'r', encoding='utf-8') as f:
              team_info = json.load(f)
         players = set()
         for name, player_info in team_info.items():
@@ -152,7 +151,7 @@ def comps(team_data: Path = Path("clan-battles-top5.json"), restriction_data: Pa
     while True:
         comp_batch = take(to_take, compgen)
         if not comp_batch:
-            print(f'All {n} compositions are expended.')
+            print(f'All {n} compositions have been expended.')
             break
         for comp in comp_batch:
             print(f"=== Composition #{n} ===")
