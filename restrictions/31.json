@@ -1,5 +1,6 @@
 {
   "TeamSize": 7,
+  "Tier": 10,
   "Banned": {
     "types": ["CV", "SS"],
     "ships": ["Napoli", "Petropavlovsk", "Alexander Nevsky", "Louisiana", "Hildebrand", "Komissar", "Amiral Lartigue", "Cristoforo Colombo"],

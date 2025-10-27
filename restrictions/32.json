@@ -1,0 +1,34 @@
+{
+  "TeamSize": 7,
+  "Tier": 9,
+  "Banned": {
+    "types": ["CV", "SS"],
+    "ships": ["Delaware", "Kearsarge", "Halford", "Chikuma II", "Black", "Benham"],
+    "allowed": 0
+  },
+  "Strong": {
+    "rtype": "ships",
+    "ships": ["Georgia", "Valparaíso", "Los Andes", "Musashi", "Dmitri Donskoi", "Kronshtadt", "Riga", "Kozma Minin", "Manteuffel", "Schröder", "Lambros Katsonis", "Kitakaze", "Alaska"],
+    "allowed": 3
+  },
+  "Battleship": {
+    "rtype": "types",
+    "types": ["BB"],
+    "allowed": 1
+  },
+  "Cruiser": {
+    "rtype": "types",
+    "types": ["CA"],
+    "allowed": 7
+  },
+  "Destroyer": {
+    "rtype": "types",
+    "types": ["DD"],
+    "allowed": 7
+  },
+  "Surface": {
+    "rtype": "types",
+    "types": ["DD", "CA", "BB"],
+    "allowed": 7
+  }
+}

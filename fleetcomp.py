@@ -1,5 +1,6 @@
 import json
 import sys
+import copy
 import argparse
 from enum import StrEnum
 from pathlib import Path
@@ -15,6 +16,10 @@ class ShipType(StrEnum):
     CA = "CA"
     BB = "BB"
     CV = "CV"
+
+
+class ConfigurationError(Exception):
+    pass
 
 
 class Quit(Exception):
@@ -43,14 +48,18 @@ class Player:
                 shipset.add(Ship(ship_name, ShipType(ship_type_str), name))
         self.ships = frozenset(shipset)
 
+    def __bool__(self) -> bool:
+        return bool(self.ships)
+
     def __repr__(self):
         return f'<{self.__class__.__name__}: {self.name}>'
 
 
 class RestrictionSet:
-    def __init__(self, rules: dict[str, dict], team_size: int = 7):
+    def __init__(self, rules: dict[str, dict], team_size: int = 7, tier: int = 10):
         bans = rules.pop('Banned', {})
         self.size_limit = rules.pop('TeamSize', team_size)
+        self.tier = rules.pop('Tier', tier)
         self.banned_ships = set(bans.pop('ships', []))
         self.banned_types = set(bans.pop('types', []))
         self.restrictions = {}
@@ -60,6 +69,11 @@ class RestrictionSet:
                 rule["rtype"]: rule[rule["rtype"]],
                 "allowed": rule["allowed"],
             }
+
+    def with_team_size(self, n: int) -> Self:
+        new = copy.deepcopy(self)
+        new.size_limit = n
+        return new
 
     def is_banned(self, ship: Ship) -> bool:
         return ship.name in self.banned_ships or ship.type in self.banned_types
@@ -106,19 +120,23 @@ class Team:
         self.players = players
 
     @classmethod
-    def load(cls, team_json: Path) -> Self:
+    def load(cls, team_json: Path, tier: int) -> Self:
         with open(team_json, 'r', encoding='utf-8') as f:
              team_info = json.load(f)
         players = set()
+        tier_key = str(tier)
         for name, player_info in team_info.items():
-            players.add(Player(name, player_info))
+            players.add(Player(name, player_info[tier_key]))
         return cls(players)
 
     def select(self, names: set[str]):
         return self.__class__({player for player in self.players if player.name in names})
 
     def menu(self, team_size: int):
-        options = {i: p.name for i, p in enumerate(self.players)}
+        options = {i: p.name for i, p in enumerate(self.players) if p}
+        if (x := len(options)) < team_size:
+            raise ConfigurationError(f'Team requires {team_size} players, but only {x} players have available ships. '
+                                     f'Pass argument --team-size-override={x} to see what partial builds you can make.')
         while True:
             print(f"Who's playing? Enter {team_size} numbers separated by commas, or Q to quit.")
             for choice, name in options.items():
@@ -129,21 +147,27 @@ class Team:
                 raise Quit("Team selection menu.")
             try:
                 chosen_numbers = [int(s.strip()) for s in selections.split(',')]
-                break
             except ValueError:
                 print(f'Invalid selection in {selections}. Try again.')
                 print()
+            else:
+                if (x := len(chosen_numbers)) != team_size:
+                    print(f'{x} teammates were selected, but {team_size} were needed. Try again.')
+                else:
+                    break
         chosen_names = {options[i] for i in chosen_numbers}
         return self.select(chosen_names)
 
     def generate_comps(self, restriction_set: RestrictionSet) -> Iterator[set[Ship]]:
-        for group in combinations(self.players, 7):
+        for group in combinations(self.players, restriction_set.size_limit):
             yield from restriction_set.team_compositions(set(), list(group))
 
 
-def comps(team_data: Path = Path("clan-battles-top5.json"), restriction_data: Path = Path("restrictions.json")):
-    team = Team.load(team_data)
+def comps(team_data: Path = Path("team.json"), restriction_data: Path = Path("restrictions/31.json"), tso: int = None):
     restrictions = RestrictionSet.load(restriction_data)
+    if tso is not None:
+        restrictions = restrictions.with_team_size(tso)
+    team = Team.load(team_data, tier=restrictions.tier)
     division = team.menu(restrictions.size_limit)
     n = 1
     to_take = 1
@@ -168,9 +192,14 @@ def comps(team_data: Path = Path("clan-battles-top5.json"), restriction_data: Pa
             to_take = 1
 
 
-def count(team_data: Path = Path("clan-battles-top5.json"), restriction_data: Path = Path('restrictions.json')):
-    team = Team.load(team_data)
+def count(team_data: Path = Path("team.json"), restriction_data: Path = Path('restrictions/31.json'), tso: int = None):
     restrictions = RestrictionSet.load(restriction_data)
+    team = Team.load(team_data, tier=restrictions.tier)
+    if tso is not None:
+        restrictions = restrictions.with_team_size(tso)
+    if (x := sum(bool(player) for player in team.players)) < restrictions.size_limit:
+        raise ConfigurationError(f'Team requires {restrictions.size_limit} players, but only {x} players have available ships. '
+                                 f'Pass argument --team-size-override={x} to see what partial builds you can make.')
     compgen = team.generate_comps(restrictions)
     print("Legal team compositions:", ilen(compgen))
 
@@ -179,22 +208,44 @@ def dispatch(command: str) -> Callable:
     return {'comps': comps, 'count': count}[command]
 
 
+def restriction_lookup(season_number: int) -> Path:
+    if (p := Path(f'restrictions/{season_number}.json')).exists():
+        return p
+    raise ConfigurationError(f'Restrictions for season {season_number} not defined.')
+
+
 def build_parser():
     parser = argparse.ArgumentParser(prog=sys.argv[0],
                                      description="Generate teamp compositions for clan battles.",
                                      epilog='')
     parser.add_argument('command', choices=['comps', 'count'])
-    parser.add_argument('-t', '--team', type=Path)
-    parser.add_argument('-r', '--restrictions', type=Path)
+    parser.add_argument('-t', '--team', type=Path, help="Specify a path to the team file (team.json will be used by default")
+    parser.add_argument('-o', '--team-size-override', type=int, help="Specify a team size to override that of the restrictions.")
+    rgroup = parser.add_mutually_exclusive_group()
+    rgroup.add_argument('-r', '--restrictions', type=Path, help="Specify a path to the restrictions file.")
+    rgroup.add_argument('-s', '--season', type=int, help="Specify a season number to look up restrictions for.")
     return parser
 
 
 def main():
     parser = build_parser()
     namespace = parser.parse_args()
+    if namespace.season:
+        restriction_set = restriction_lookup(namespace.season)
+    else:
+        restriction_set = namespace.restrictions
+    if namespace.team:
+        team = namespace.team
+    else:
+        team = Path("team.json")
+
+    tso = namespace.team_size_override
     procedure = dispatch(namespace.command)
-    procedure(team_data=namespace.team, restriction_data=namespace.restrictions)
+    procedure(team_data=team, restriction_data=restriction_set, tso=tso)
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except Quit:
+        pass
