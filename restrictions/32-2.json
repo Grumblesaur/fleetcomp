@@ -1,0 +1,34 @@
+{
+  "TeamSize": 7,
+  "Tier": 10,
+  "Banned": {
+    "types": ["CV", "SS"],
+    "ships": ["Libertad", "Vermont", "Louisiana", "Amiral Lartigue", "Kommissar", "Hildebrand", "Alexander Nevsky", "Småland"],
+    "allowed": 0
+  },
+  "Strong": {
+    "rtype": "ships",
+    "ships": ["Ohio", "St. Vincent", "Cristoforo Colombo", "Wisconsin", "Brisbane", "Svea", "Petropavlovsk", "Gdańsk", "Marceau"],
+    "allowed": 1
+  },
+  "Battleship": {
+    "rtype": "types",
+    "types": ["BB"],
+    "allowed": 1
+  },
+  "Cruiser": {
+    "rtype": "types",
+    "types": ["CA"],
+    "allowed": 7
+  },
+  "Destroyer": {
+    "rtype": "types",
+    "types": ["DD"],
+    "allowed": 7
+  },
+  "Surface": {
+    "rtype": "types",
+    "types": ["DD", "CA", "BB"],
+    "allowed": 7
+  }
+}

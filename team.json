@@ -10,9 +10,12 @@
     },
     "10": {
       "BB": ["Ohio", "Wisconsin", "Preussen", "Grosser Kurfürst", "Mecklenburg", "Thunderer", "République",
-             "Bourgogne"],
-      "CA": ["Worcester", "Puerto Rico", "Stalingrad", "Napoli", "Gouden Leeuw", "Brisbane"],
-      "DD": ["Hayate","Khabarovsk", "Z-52", "Ragnar", "Tromp"]
+             "Bourgogne", "Ruggiera di Lauria", "Yamato", "Montana", "Louisiana", "Schlieffen", "Conqueror",
+             "Cristoforo Colombo"],
+      "CA": ["Worcester", "Puerto Rico", "Stalingrad", "Napoli", "Gouden Leeuw", "Brisbane", "Yoshino", "Defence",
+             "Venezia", "Henri IV", "Marseille", "Goliath", "Minotaur", "Hindenburg", "Alexander Nevsky", "Petropavlovsk"],
+      "DD": ["Hayate", "Khabarovsk", "Z-52", "Ragnar", "Tromp", "Forrest Sherman", "Gdańsk", "Attilio Regolo", "Kléber",
+             "Daring", "Elbing", "Delny", "Grozovoi", "Harugumo", "Gearing"]
     }
   },
   "HowthCastleAndEnvirons": {
@@ -23,9 +26,10 @@
       "DD": ["Fletcher", "Halford", "Somme", "Mogador", "Orage", "Groningen"]
     },
     "10": {
-      "BB": ["Wisconsin", "Montana", "Irresistible"],
-      "CA": ["Des Moines", "Kushiro", "Napoli", "Jinan", "Svea", "Gouden Leeuw", "Utrecht", "Cerberus", "Zao"],
-      "DD": ["Gearing", "Laffey", "Cassard", "Kléber", "Marceau", "Tromp", "Vampire II"]
+      "BB": ["Wisconsin", "Montana", "Irresistible", "Aki", "Libertad"],
+      "CA": ["Des Moines", "Kushiro", "Napoli", "Jinan", "Svea", "Gouden Leeuw", "Utrecht", "Cerberus", "Zao",
+             "Defence", "Venezia", "Worcester", "Petropavlovsk", "Marseille", "Minotaur"],
+      "DD": ["Gearing", "Laffey", "Cassard", "Kléber", "Marceau", "Tromp", "Vampire II", "Lüshun"]
     }
   },
   "Tendaarnight": {
@@ -123,6 +127,14 @@
       "BB": [],
       "CA": [],
       "DD": ["Shimakaze", "Gearing"]
+    }
+  },
+  "Spoophals": {
+    "10": {
+      "BB": ["Aki", "Thunderer"],
+      "CA": ["Bremen", "Hawaii"],
+      "DD": ["Kléber", "Marceau"],
+      "CV": ["Manfred von Richtofen", "Max Immelmann"]
     }
   }
 }
