@@ -164,6 +164,8 @@ class Team:
 
 
 def comps(team_data: Path = Path("team.json"), restriction_data: Path = Path("restrictions/31.json"), tso: int = None):
+    # XXX: the head of this function and count() are similar;
+    # we should perform this common boilerplate before dispatching to one or the other
     restrictions = RestrictionSet.load(restriction_data)
     if tso is not None:
         restrictions = restrictions.with_team_size(tso)

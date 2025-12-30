@@ -1,9 +1,12 @@
 {
   "CankedTank": {
     "9": {
-      "BB": [],
-      "CA": [],
-      "DD": []
+      "BB": ["Minnesota", "Izumo", "Iowa", "Georgia", "Musashi", "Delaware", "Kearsarge", "Friedrich der Grosse",
+             "Lion", "Prinz Rupprecht", "Marlborough", "Jean Bart", "Lepanto", "Niord", "Alsace"],
+      "CA": ["Alaska", "Roon", "Chikuma II", "Seattle", "Dmitri Donskoi", "Blücher", "Neptune", "Riga", "Siegfried",
+             "Drake", "Brest", "Saint-Louis", "Brindisi", "Carnot"],
+      "DD": ["Kitakaze", "Fletcher", "Tashkent", "Udaloi", "Neustrashimy", "Felix Schultz", "ZF-6", "Somme", "Z-46",
+             "Jutland", "Mogador", "Adriatico", "Lambros Katsonis", "Groningen"]
     },
     "10": {
       "BB": ["Ohio", "Wisconsin", "Preussen", "Grosser Kurfürst", "Mecklenburg", "Thunderer", "République",
@@ -27,8 +30,8 @@
   },
   "Tendaarnight": {
     "9": {
-      "BB": [],
-      "CA": [],
+      "BB": ["Minnesota", "Prinz Rupprecht"],
+      "CA": ["Dalian"],
       "DD": []
     },
     "10": {
@@ -51,9 +54,9 @@
   },
   "con411": {
     "9": {
-      "BB": [],
-      "CA": [],
-      "DD": []
+      "BB": ["Iowa"],
+      "CA": ["Ibuki", "Roon"],
+      "DD": ["Z-44"]
     },
     "10": {
       "BB": [],
@@ -75,9 +78,9 @@
   },
   "Crisp_Kringle": {
     "9": {
-      "BB": [],
-      "CA": [],
-      "DD": []
+      "BB": ["Iowa", "Kearsarge", "Georgia", "Illinois", "Pommern B", "Mengchong"],
+      "CA": ["Alaska B", "Somme"],
+      "DD": ["Friesland"]
     },
     "10": {
       "BB": ["Cristoforo Colombo", "Grosser Kurfürst", "Yamato", "Conqueror", "Montana", "Vermont", "Bourgogne"],
