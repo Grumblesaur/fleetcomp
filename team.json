@@ -28,7 +28,7 @@
     "10": {
       "BB": ["Wisconsin", "Montana", "Irresistible", "Aki", "Libertad"],
       "CA": ["Des Moines", "Kushiro", "Napoli", "Jinan", "Svea", "Gouden Leeuw", "Utrecht", "Cerberus", "Zao",
-             "Defence", "Venezia", "Worcester", "Petropavlovsk", "Marseille", "Minotaur"],
+             "Defence", "Venezia", "Worcester", "Petropavlovsk", "Marseille", "Minotaur", "Hawaii"],
       "DD": ["Gearing", "Laffey", "Cassard", "Kléber", "Marceau", "Tromp", "Vampire II", "Lüshun"]
     }
   },
@@ -63,9 +63,10 @@
       "DD": ["Z-44"]
     },
     "10": {
-      "BB": [],
-      "CA": ["Yoshino", "Zao"],
-      "DD": []
+      "BB": ["Montana"],
+      "CA": ["Yoshino", "Zao", "Hindenburg"],
+      "DD": [],
+      "CV": ["Max Immelmann"]
     }
   },
   "Windexor": {
@@ -100,9 +101,11 @@
     },
     "10": {
       "BB": ["Yamato", "Grosser Kurfürst", "Montana", "Schlieffen", "République", "Conqueror", "Preussen", "Vermont",
-             "Mecklenburg", "Bourgogne", "Kremlin"],
-      "CA": ["Worcester", "Hindenburg", "Minotaur", "Petropavlovsk", "Napoli", "Henri IV", "Brisbane"],
-      "DD": ["Forrest Sherman", "Gearing", "Laffey"]
+             "Mecklenburg", "Bourgogne", "Kremlin", "Ohio", "St. Vincent", "Aki", "Kremlin"],
+      "CA": ["Worcester", "Hindenburg", "Minotaur", "Petropavlovsk", "Napoli", "Henri IV", "Brisbane", "Prinz Adalbert",
+             "Marseille", "Minotaur", "Gibraltar", "Hawaii", "Yoshino"],
+      "DD": ["Forrest Sherman", "Gearing", "Laffey", "Lüshun", "Forrest Sherman", "Harugumo"],
+      "CV": ["Max Immelmann", "Midway"]
     }
   },
   "lekotbegemot": {
@@ -112,19 +115,19 @@
       "DD": []
     },
     "10": {
-      "BB": ["Schlieffen", "Libertad"],
-      "CA": ["Castilla", "San Martín"],
+      "BB": ["Schlieffen", "Libertad", "Bungo"],
+      "CA": ["Castilla", "San Martín", "Salem", "Zao"],
       "DD": []
     }
   },
   "Duker_D9": {
     "9": {
-      "BB": [],
-      "CA": ["Tulsa"],
+      "BB": ["Taihang"],
+      "CA": ["Tulsa", "Suzuya"],
       "DD": ["Fletcher"]
     },
     "10": {
-      "BB": [],
+      "BB": ["Aki"],
       "CA": [],
       "DD": ["Shimakaze", "Gearing"]
     }
