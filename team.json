@@ -52,8 +52,8 @@
     },
     "10": {
       "BB": [],
-      "CA": ["Salem", "Worcester"],
-      "DD": ["Daring", "Laffey"]
+      "CA": ["Salem", "Worcester", "Castilla"],
+      "DD": ["Daring", "Laffey", "Kléber", "Lüshun"]
     }
   },
   "con411": {
@@ -75,9 +75,11 @@
       "DD": ["Black"]
     },
     "10": {
-      "BB": ["Schlieffen", "Cristoforo Colombo", "Ohio", "Preussen", "Grosser Kurfürst", "Conqueror"],
-      "CA": ["Worcester", "Salem", "Colbert", "Jinan", "Napoli", "Des Moines", "Petropavlovsk"],
-      "DD": ["Halland", "Yueyang", "Gearing", "Forrest Sherman", "Shimakaze", "Z-42"]
+      "BB": ["Schlieffen", "Cristoforo Colombo", "Ohio", "Preussen", "Grosser Kurfürst", "Conqueror", "Vermont",
+             "Montana"],
+      "CA": ["Worcester", "Salem", "Colbert", "Jinan", "Napoli", "Des Moines", "Petropavlovsk", "Gouden Leeuw",
+             "Hawaii", "Zao", "Minotaur"],
+      "DD": ["Halland", "Yueyang", "Gearing", "Forrest Sherman", "Shimakaze", "Z-42", "Kléber"]
     }
   },
   "Crisp_Kringle": {
@@ -135,6 +137,20 @@
       "CA": ["Bremen", "Hawaii"],
       "DD": ["Kléber", "Marceau"],
       "CV": ["Manfred von Richtofen", "Max Immelmann"]
+    }
+  },
+  "caine3rdmortal": {
+    "10": {
+      "BB": ["Aki"],
+      "CA": ["Petropavlovsk"],
+      "DD": []
+    }
+  },
+  "Cap_Brandon0sh": {
+    "10": {
+      "BB": ["Kremlin", "Libertad", "Aki"],
+      "CA": ["Des Moines", "Moskva"],
+      "DD": ["Laffey", "Lüshun"]
     }
   }
 }
