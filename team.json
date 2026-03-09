@@ -15,21 +15,34 @@
       "CA": ["Worcester", "Puerto Rico", "Stalingrad", "Napoli", "Gouden Leeuw", "Brisbane", "Yoshino", "Defence",
              "Venezia", "Henri IV", "Marseille", "Goliath", "Minotaur", "Hindenburg", "Alexander Nevsky", "Petropavlovsk"],
       "DD": ["Hayate", "Khabarovsk", "Z-52", "Ragnar", "Tromp", "Forrest Sherman", "Gdańsk", "Attilio Regolo", "Kléber",
-             "Daring", "Elbing", "Delny", "Grozovoi", "Harugumo", "Gearing"]
+             "Daring", "Elbing", "Delny", "Grozovoi", "Harugumo", "Gearing"],
+      "SS": ["Surcouf"]
     }
   },
   "HowthCastleAndEnvirons": {
+    "8": {
+      "DD": ["Osborne", "Gustav Julius Maerker", "Benson", "Cossack", "L'Aventurier", "Le Fantasque"],
+      "CA": ["Mogami", "Tone", "Baltimore", "Cleveland", "Rochester", "Wichita", "AL Montpelier", "San Diego",
+             "Bridgeport", "Schill", "Edinburgh", "Tiger '59", "Charles Martel", "Cherbourg", "Bayard", "Amalfi",
+             "Harbin", "Haarlem", "Jaarsveld", "Cataluña"],
+      "BB": ["North Carolina", "North Carolina CLR", "Constellation", "Massachusetts", "Lenin", "Zieten", "Picardie",
+             "AL Littorio", "Ipiranga"],
+      "CV": ["Hornet", "Theseus"],
+      "SS": ["Alliance"]
+    },
     "9": {
       "BB": ["Iowa", "Niord", "Georgia", "Illinois", "Sun Yat-Sen", "Los Andes"],
       "CA": ["Ibuki", "Buffalo", "Seattle", "Alaska", "Vallejo", "Blücher", "Sejong", "Johan de Witt",
-             "Menno van Coehoorn", "Encounter", "Almirante Oquendo"],
-      "DD": ["Fletcher", "Halford", "Somme", "Mogador", "Orage", "Groningen"]
+             "Menno van Coehoorn", "Encounter", "Almirante Oquendo", "Ferrante Gonzaga", "Neptune", "Brest", "Riga",
+             "Saint-Louis", "Brindisi"],
+      "DD": ["Fletcher", "Halford", "GQ Johnny", "Somme", "Mogador", "Orage", "Groningen"]
     },
     "10": {
       "BB": ["Wisconsin", "Montana", "Irresistible", "Aki", "Libertad"],
       "CA": ["Des Moines", "Kushiro", "Napoli", "Jinan", "Svea", "Gouden Leeuw", "Utrecht", "Cerberus", "Zao",
              "Defence", "Venezia", "Worcester", "Petropavlovsk", "Marseille", "Minotaur", "Hawaii"],
-      "DD": ["Gearing", "Laffey", "Cassard", "Kléber", "Marceau", "Tromp", "Vampire II", "Lüshun"]
+      "DD": ["Gearing", "Laffey", "Cassard", "Kléber", "Marceau", "Tromp", "Vampire II", "Lüshun B"],
+      "SS": ["U-4501"]
     }
   },
   "Tendaarnight": {
@@ -45,6 +58,11 @@
     }
   },
   "Contaan": {
+    "8": {
+      "DD": ["Le Fantasque", "Lightning", "Cossack"],
+      "CA": ["Cataluña", "San Diego", "Cleveland", "Hipper", "Bridgeport"],
+      "BB": []
+    },
     "9": {
       "BB": [],
       "CA": ["Seattle"],
@@ -96,6 +114,13 @@
     }
   },
   "clubinator89": {
+    "8": {
+      "DD": ["Kagerō", "Akizuki", "Z-35", "Fenyang", "Benson", "Le Fantasque"],
+      "CA": ["San Diego", "Bridgeport", "Ochakov", "Prinz Eugen", "Cheshire", "Cherbourg", "Knesebeck", "Baltimore",
+             "Cleveland"],
+      "BB": ["Brandenburg B", "Tirpitz", "Wahnsinn", "Odin", "Bismarck", "Zieten", "Richelieu", "Hawke", "Monarch",
+             "Vladivostok", "North Carolina", "Amagi"]
+    },
     "9": {
       "BB": ["Kearsarge", "Iowa", "Pommern", "Duncan", "Alsace", "Jean Bart"],
       "CA": ["Alaska", "Seattle", "Roon", "Drake"],
@@ -154,6 +179,30 @@
       "BB": ["Kremlin", "Libertad", "Aki"],
       "CA": ["Des Moines", "Moskva"],
       "DD": ["Laffey", "Lüshun"]
+    },
+    "8": {
+      "BB": ["Constellation", "Ipiranga", "Marcantonio Colonna", "Hawke", "Anhalt"],
+      "CA": ["Dmitri Pozharsky", "Bridgeport", "Wichita", "Mainz", "Allende", "Baltimore", "Harbin"],
+      "DD": []
+    }
+  },
+  "Steve": {
+    "8": {
+      "BB": ["Alabama", "Tennessee", "Bismarck", "Anhalt", "Ipiranga", "Amagi", "North Carolina"],
+      "CA": ["Atago B", "San Diego", "Bridgeport", "Piñatian", "Almirante Grau", "Knesebeck", "Jaarsveld"],
+      "DD": ["Kidd"],
+      "CV": ["Hornet", "Yorktown"],
+      "SS": ["Salmon"]
+    },
+    "9": {
+      "BB": ["Kearsarge", "Illinois", "Iowa"],
+      "CA": ["Tulsa"],
+      "DD": ["Fletcher", "Halford", "GQ Johnny"]
+    },
+    "10": {
+      "BB": ["Yamato", "Montana"],
+      "CA": ["Salem", "Napoli"],
+      "DD": ["Harugumo", "Shimakaze", "Hull", "Laffey", "Khabarovsk", "Lüshun B", "Tromp"]
     }
   }
 }
