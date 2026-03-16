@@ -1,0 +1,24 @@
+{
+  "TeamSize": 7,
+  "Tier": 10,
+  "Banned": {
+    "types": ["CV", "SS"],
+    "ships": [],
+    "allowed": 0
+  },
+  "Battleship": {
+    "rtype": "types",
+    "types": ["BB"],
+    "allowed": 1,
+  },
+  "Cruiser": {
+    "rtype": "types",
+    "types": ["CA"],
+    "allowed": 7
+  },
+  "Destroyer": {
+    "rtype": "types",
+    "types": ["DD"],
+    "allowed": 7
+  }
+}
